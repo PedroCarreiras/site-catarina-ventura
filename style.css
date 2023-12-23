@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+li {
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+video {
+    justify-self: center;
+    max-width: 70%;
+    height: auto;
+    border-radius: 1em;
+}
+
+#eu {
+    max-height: 300px;
+    width: auto;
+}
+
+.content-grid {
+    --padding-inline: 2rem;
+    --content-max-width: 900px;
+    --breakout-max-width: 1300px;
+
+    --content-size : calc(100% - (var(--padding-inline) * 2));
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+    margin: min(3em, 5dvh) min(10px, 1dvw);
+    row-gap: 2em;
+    display: grid;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+        [breakout-start] minmax(0, var(--breakout-size))
+        [content-start] min(var(--content-size), var(--content-max-width)) [content-end]
+        minmax(0, var(--breakout-size)) [breakout-end]
+        minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+.title {
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.section > * {
+    max-width: 45%;
+}
+
+#about {
+    max-width: 30%;
+}
+
+#hobbies-photos {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+#hobbies-photos .left {
+    max-width: 300px;
+}
+
+#hobbies-photos .rigt {
+    max-width: 128px;
+}
+
+#hobbies-photos .left, #hobbies-photos .right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#hobbies-photos img {
+    max-width: 300px;
+    max-height: 225px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: #c9c9c9;
+    max-width: 100%;
+    padding: 2em;
+}
+
+.footer-title {
+    font-weight: normal;
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#disclaimer {
+    max-width: 450px;
+    min-width: 300px;
+}
