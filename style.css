@@ -9,6 +9,20 @@ body {
     flex-direction: column;
 }
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 10% 1em;
+}
+
+@media (max-width: 615px) {
+    header {
+        justify-content: center;
+    }
+}
+
 a {
     text-decoration: underline;
     color: rgb(0, 0, 0);
@@ -26,6 +40,7 @@ li {
 nav {
     display: flex;
     flex-direction: row;
+    row-gap: 1em;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -89,11 +104,13 @@ video {
 }
 
 .section > * {
-    max-width: 45%;
+    width: 100%;
+    max-width: 300px;
 }
 
 #about {
-    max-width: 30%;
+    width: 100%;
+    max-width: 300px;
 }
 
 #hobbies-photos {
@@ -103,6 +120,7 @@ video {
     flex-direction: row;
     gap: 1em;
     justify-content: center;
+    max-width: 100%;
 }
 
 #hobbies-photos .left {
@@ -124,6 +142,31 @@ video {
     max-height: 225px;
 }
 
+#sport-photos {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+#sport-photos .row {
+    display: flex;
+    gap: 1em;
+    max-width: calc(100% - 1em);
+    justify-content: center;
+}
+
+#sport-photos .row img {
+    max-width: 50%;
+}
+
+#sport-photos img {
+    max-height: 300px;
+    max-width: 100%;
+}
+
 
 footer {
     display: flex;
@@ -143,6 +186,11 @@ footer {
 footer > div {
     display: flex;
     flex-direction: column;
+}
+
+footer li a {
+    display: flex;
+    align-items: center;
 }
 
 #disclaimer {
